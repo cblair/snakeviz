@@ -41,7 +41,8 @@ def main(argv=sys.argv[1:]):
 
     try:
         open(filename)
-    except IOError, e:
+    except IOError:
+        ExceptionClass, e = sys.exc_info()[:2]
         parser.error('the file %s could not be opened: %s'
                      % (filename, str(e)))
 

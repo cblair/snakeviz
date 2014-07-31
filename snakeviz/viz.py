@@ -41,7 +41,7 @@ def stats_rows(filename):
 
     rows = []
 
-    for r in loader.rows.itervalues():
+    for r in loader.rows.items():
         if isinstance(r, pstatsloader.PStatRow):
             calls_value = r.recursive
             if r.recursive > r.calls:
